@@ -1,0 +1,59 @@
+/* Hero & cards */
+.hero{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start;margin-bottom:28px}
+.hero .card{padding:22px;background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow)}
+.intro h1{margin:0 0 6px;font-size:28px}
+.intro p{margin:0;color:var(--muted)}
+
+.meta{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.meta .item{display:flex;gap:10px;align-items:center}
+.chip{padding:6px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent) 10%, transparent);font-weight:600;font-size:13px}
+
+/* Projects */
+h2{font-size:18px;margin:18px 0}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.project{background:linear-gradient(180deg,transparent, rgba(0,0,0,0.02));padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04)}
+.proj-screenshot{height:140px;border-radius:10px;/*background:linear-gradient(135deg,#e6eef8,#fff)*/;display:flex;align-items:center;justify-content:center;font-family:var(--mono);color:var(--muted);margin-bottom:10px}
+.proj-title{font-weight:700;margin-bottom:6px}
+.proj-desc{font-size:13px;color:var(--muted);margin-bottom:10px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{background:transparent;border:1px dashed rgba(0,0,0,0.06);padding:6px 8px;border-radius:8px;font-size:12px;color:var(--muted)}
+
+/* Skills & resume */
+.aside{display:flex;flex-direction:column;gap:14px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.skill{background:transparent;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.04);text-align:center;font-weight:600}
+
+/* Footer */
+footer {
+  margin-top: 60px;   /* plus d'air avant le footer */
+  padding: 22px 0 40px;  /* espace interne */
+  border-top: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Dark mode improvements */
+:root[data-theme='dark'] .project {
+  background: #121a29;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+:root[data-theme='dark'] .skill {
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+}
+
+:root[data-theme='dark'] .tag {
+  border: 1px dashed rgba(255,255,255,0.1);
+  color: #cdd6e5;
+}
+
+/* Hover effects for better feedback */
+:root[data-theme='dark'] .project:hover,
+:root[data-theme='dark'] .skill:hover {
+  background: rgba(255,255,255,0.05);
+  transition: background 0.2s ease;
+}
+

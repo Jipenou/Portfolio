@@ -1,0 +1,21 @@
+:root {
+  --bg: #ffffff;
+  --card: #f6f7fb;
+  --text: #0b1220;
+  --muted: #4b5563;
+  --accent: #2563eb;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 6px 18px rgba(16,24,40,0.08);
+  --radius: 12px;
+  --mono: 'SFMono-Regular', ui-monospace, SFMono, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0b1220;         /* fond général */
+  --card: #1a2333;       /* cartes plus claires que bg */
+  --text: #e6eef8;       /* texte clair */
+  --muted: #9aa7bb;      /* texte secondaire */
+  --accent: #60a5fa;     /* bleu accent */
+  --glass: rgba(8,12,18,0.6);
+  --shadow: 0 6px 18px rgba(0,0,0,0.6), 0 0 6px rgba(255,255,255,0.05);
+}
