@@ -57,3 +57,42 @@ footer {
   transition: background 0.2s ease;
 }
 
+
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .aside .card {
+    flex: 1 1 48%;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .proj-screenshot img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .aside {
+    flex-direction: column;
+  }
+
+  .aside .card {
+    flex: 1 1 100%;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}

@@ -53,3 +53,17 @@ nav{display:flex;gap:12px;align-items:center}
 /* accessibility helpers */
 a{color:var(--accent);text-decoration:none}
 .sr-only{position:absolute;left:-9999px}
+
+@media (max-width: 520px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+}
