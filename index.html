@@ -1,199 +1,349 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Thomas Neuville</title>
-  <meta name="description" content="Portfolio — Thomas Neuville | Étudiant chez Polytech Paris-Saclay · Développement, systèmes, projets" />
-  
+  <title>Thomas Neuville — Software Engineering Student</title>
+  <meta name="description" content="Thomas Neuville — Computer science engineering student at Polytech Paris-Saclay and apprentice software engineer at Thales. Looking for a 9–12 week internship abroad (summer 2027)." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/image.css">
   <link rel="stylesheet" href="css/contact.css">
 
+  <script>
+    // Apply saved/system theme before paint to avoid a flash
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-  <div class="wrap" id="page">
-    <header>
-      <div class="brand">
-        <div class="avatar" aria-hidden="true">TN</div>
-        <div>
-          <div class="name">Thomas Neuville</div>
-          <div class="role">Étudiant · Polytech Paris-Saclay — Informatique et Ingénierie Mathématique</div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="avatar" aria-hidden="true">TN</span>
+        <span class="brand-name">Thomas Neuville</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="menuToggle" class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="availability">
+            <span class="dot" aria-hidden="true"></span>
+            Open to a 9–12 week internship abroad · 31 May – 27 August 2027
+          </p>
+          <h1>Hi, I'm Thomas.<br><span class="accent-text">I build tools engineers use every day.</span></h1>
+          <p class="lead">
+            Computer science engineering student at <strong>Polytech Paris-Saclay</strong> (class of 2028)
+            and apprentice software engineer at <strong>Thales</strong>. I work on test result analysis,
+            data pipelines, and Java and Python applications.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-secondary" href="pdf/CV_Thomas_Neuville.pdf" download>
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Download CV
+            </a>
+          </div>
+          <ul class="hero-links">
+            <li><a href="https://www.linkedin.com/in/thomas-neuville-12bb32295/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Jipenou/" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="mailto:thomas.neuville@universite-paris-saclay.fr">Email</a></li>
+          </ul>
+        </div>
+
+        <aside class="hero-card" aria-label="Key facts">
+          <dl class="facts">
+            <div><dt>Currently</dt><dd>Apprentice Software Engineer, Thales LAS France</dd></div>
+            <div><dt>Studying</dt><dd>Computer Science &amp; Mathematical Engineering, Polytech Paris-Saclay</dd></div>
+            <div><dt>Looking for</dt><dd>Internship abroad in software engineering, testing or data tooling</dd></div>
+            <div><dt>Based in</dt><dd>Paris area, France</dd></div>
+            <div><dt>Languages</dt><dd>French (native) · English (C1) · Spanish (B1)</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-index">01</span>About</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a computer science engineering student at Polytech Paris-Saclay, working in parallel as an
+              apprentice software engineer at Thales. My day-to-day work is building internal tools that other
+              engineers rely on: graphical analysis applications, test history frameworks and the data pipelines behind them.
+            </p>
+            <p>
+              I enjoy turning slow, manual processes into reliable, automated ones, and I care about building
+              software that people actually want to use, shaped by their feedback.
+            </p>
+            <p>
+              As part of my engineering degree, I'm looking for a <strong>9 to 12-week internship abroad</strong>
+              between <strong>31 May and 27 August 2027</strong>.
+            </p>
+          </div>
+          <ul class="stats" aria-label="Highlights">
+            <li><span class="stat-num">~20</span><span class="stat-label">features shipped on a Java analysis tool</span></li>
+            <li><span class="stat-num">2.5 h</span><span class="stat-label">saved per platform per day by a test history framework</span></li>
+            <li><span class="stat-num">2</span><span class="stat-label">test platforms of ~20 users each running my framework</span></li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <nav aria-label="Navigation principale">
-        <button id="themeToggle" class="btn" title="Basculer le thème">🌓</button>
-        <a class="btn ghost" href="#projects">Projets</a>
-        <a class="btn primary" href="#contact">Contact</a>
-      </nav>
-    </header>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-index">02</span>Experience</h2>
 
-    <main>
-      <section class="hero">
-        <div class="card intro">
-          <h1>Bonjour, je suis Thomas, développeur & ingénieur</h1>
-          <p>Étudiant en école d'ingénieur chez Polytech Paris-Saclay en spécialité Informatique et Ingénierie Mathématique, je développe des applications web, des outils systèmes et des projets embarqués. J'aime résoudre des problèmes complexes et apprendre de nouvelles technos.</p>
-
-          <div class="meta">
-            <div class="item"><span class="chip">alternant chez THALES</span></div>
-            <div class="item"><strong>Langages :</strong>&nbsp;<span class="role">Java · Python · C/C++ · HTML · CSS · PHP · JavaScript · SQL · PL/SQL · CQL</span></div>
-            <div class="item"><strong>Outils :</strong>&nbsp;<span class="role">Git · Docker · Linux · Pack Office</span></div>
-          </div>
-        </div>
-
-        <aside class="aside">
-          <div class="card">
-            <h3>Compétences rapides</h3>
-            <div class="skills" aria-hidden="false">
-              <div class="skill">Algorithms</div>
-              <div class="skill">Systèmes</div>
-              <div class="skill">Web</div>
-              <div class="skill">CI/CD</div>
-              <div class="skill">Database</div>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="date">Sep 2025 — Present</span>
+              <span class="place">Massy, France</span>
             </div>
-            <div style="margin-top:12px;text-align:center">
-              <a class="btn primary" href="#projects">Voir mes projets</a>
+            <div class="timeline-body">
+              <h3>Apprentice Software Engineer <span class="at">· Thales LAS France</span></h3>
+              <ul class="bullets">
+                <li>Develop a Java-based graphical analysis tool used several times a day by 3 projects and multiple engineers in their daily analysis work.</li>
+                <li>Delivered around 20 new features, including 5 major additions, driven by the team's needs and feedback.</li>
+                <li>Automate analysis tasks that were previously done by hand, saving minutes to hours per analysis.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>Java</li><li>Python</li><li>Git</li><li>Bitbucket</li><li>Jira</li><li>Bash</li><li>Linux</li>
+              </ul>
             </div>
-          </div>
+          </li>
 
-          <div class="card">
-            <h3>Curriculum vitæ</h3>
-            <p class="proj-desc">Téléchargez mon résumé (PDF) et consultez mes expériences.</p>
-            <div style="display:flex;gap:8px;justify-content:space-between;">
-              <a class="btn" href="pdf/CV_Thomas_Neuville.pdf" download id="downloadCV">Télécharger PDF</a>
-              <a class="btn" href="https://github.com/Jipenou/" id="github">GitHub</a>
+          <li class="timeline-item">
+            <div class="timeline-meta">
+              <span class="date">Apr 2025 — Jul 2025</span>
+              <span class="place">Massy, France</span>
             </div>
-          </div>
-        </aside>
-      </section>
+            <div class="timeline-body">
+              <h3>Software Engineering Intern <span class="at">· Thales LAS France</span></h3>
+              <ul class="bullets">
+                <li>Built a test history framework with Python, CQL and Cassandra, processing around 10 automated tests per day and producing statistics, graphs and historical results.</li>
+                <li>Integrated it into 2 test platforms used by about 20 people each, replacing manual review of individual test reports and saving around 2.5 hours per platform per day.</li>
+                <li>Built a web interface with success rates, charts and filters by project, platform and result, so teams could compare results over time and spot recurring failures.</li>
+                <li>Wrote the technical and installation documentation that let both platforms deploy the framework on their own.</li>
+              </ul>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>CQL</li><li>Cassandra</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li><li>Linux</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-      <section id="projects">
-        <h2>Projets réalisés</h2>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-index">03</span>Academic projects</h2>
+
         <div class="projects">
-
           <article class="project" aria-labelledby="p1">
-            <div class="proj-screenshot">
-                <img class="img_proj" id="jo_2024" src="images/jo_2024.png"/>
-                &nbsp;
-                <img class="img_proj" id="oracle" src="images/oracle.png"/>
-                &nbsp;
-                <img class="img_proj" id="java" src="images/java.jpg"/>
+            <div class="project-logos">
+              <img src="images/jo_2024.png" alt="Paris 2024 Olympic Games logo" loading="lazy">
+              <img src="images/oracle.png" alt="Oracle logo" loading="lazy">
+              <img src="images/java.jpg" alt="Java logo" loading="lazy">
             </div>
-            <div class="proj-title" id="p1">Interface graphique de gestion des Jeux Olympiques 2024</div>
-            <div class="proj-desc">Développement d’une interface graphique en Java 
-                permettant de gérer les Jeux Olympiques de Paris 2024 (trinôme - 3 mois).
-            </div>
-            <div class="tags">
-              <span class="tag">Java</span>
-              <span class="tag">IHM</span>
-              <span class="tag">Oracle</span>  
-              <span class="tag">Analyse</span>  
-              <span class="tag">travail d'équipe</span>  
-              <span class="tag">Git</span>  
+            <div class="project-body">
+              <p class="project-meta">Team of 3 · 3 months</p>
+              <h3 id="p1">Paris 2024 Olympic Games management app</h3>
+              <p>A Java desktop application for managing the Paris 2024 Olympic Games, backed by an Oracle database.</p>
+              <ul class="tags"><li>Java</li><li>GUI</li><li>Oracle</li><li>Software design</li><li>Git</li></ul>
             </div>
           </article>
 
           <article class="project" aria-labelledby="p2">
-            <div class="proj-screenshot">
-                <img class="img_proj" id="php" src="images/php.png"/>
-                &nbsp;
-                <img class="img_proj" id="mySQL" src="images/mySQL.png"/>
-                &nbsp;
-                <img class="img_proj" id="html" src="images/html.png"/>
+            <div class="project-logos">
+              <img src="images/php.png" alt="PHP logo" loading="lazy">
+              <img src="images/mySQL.png" alt="MySQL logo" loading="lazy">
+              <img src="images/html.png" alt="HTML5 logo" loading="lazy">
             </div>
-            <div class="proj-title" id="p2">Site web - Démocratie participative</div>
-            <div class="proj-desc">Développement d’un site web de
-                                   démocratie participative permettannt le débat sur plusieurs sujet
-                                   ainsi que des changement/ajout dans une communauté (trinôme - 3 mois)
-            </div>
-            <div class="tags">
-              <span class="tag">PHP</span>
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JS</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">API REST</span>
-              <span class="tag">Java</span>
-
+            <div class="project-body">
+              <p class="project-meta">Team of 3 · 3 months</p>
+              <h3 id="p2">Participatory democracy website</h3>
+              <p>A web platform where community members can debate topics and propose changes or additions, built on a PHP backend with a REST API and a MySQL database.</p>
+              <ul class="tags"><li>PHP</li><li>MySQL</li><li>REST API</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Java</li></ul>
             </div>
           </article>
 
           <article class="project" aria-labelledby="p3">
-            <div class="proj-screenshot">
-                <img class="img_proj" id="c++" src="images/c++.png"/>
-                &nbsp;
-                <img class="img_proj" id="jpg_logo" src="images/jpg_logo.png"/>
+            <div class="project-logos">
+              <img src="images/c++.png" alt="C++ logo" loading="lazy">
+              <img src="images/jpg_logo.png" alt="JPG image file icon" loading="lazy">
             </div>
-            <div class="proj-title" id="p3">Programme de transformation d'image</div>
-            <div class="proj-desc">Développement d’un programme de
-                                   transformation d’image par le biais d'un menu(noir et blanc, rotation,
-                                   zoom...). Possibilité de sauvegarder son image, et d'ouvrir celle de son choix pour la modifier. (Binôme - 2 mois)
-            </div>
-            <div class="tags">
-              <span class="tag">C++</span>
-              <span class="tag">Algorithmique</span>
-              <span class="tag">Analyse</span>
-              <span class="tag">Travail d'équipe</span>
-              <span class="tag">Binôme</span>
-              <span class="tag">2 mois</span>
+            <div class="project-body">
+              <p class="project-meta">Team of 2 · 2 months</p>
+              <h3 id="p3">Image processing program</h3>
+              <p>A menu-driven C++ program to open, transform (black &amp; white, rotation, zoom…) and save any image of your choice.</p>
+              <ul class="tags"><li>C++</li><li>Algorithms</li><li>Image processing</li></ul>
             </div>
           </article>
 
           <article class="project" aria-labelledby="p4">
-            <div class="proj-screenshot">
-                <img class="img_proj" id="linux" src="images/linux.png"/>
-                &nbsp;
-                <img class="img_proj" id="raspberry_pi" src="images/raspberry_pi.jpg"/>
-                &nbsp;
-                <img class="img_proj" id="mariadb" src="images/mariadb.png"/>
+            <div class="project-logos">
+              <img src="images/linux.png" alt="Linux logo" loading="lazy">
+              <img src="images/raspberry_pi.jpg" alt="Raspberry Pi logo" loading="lazy">
+              <img src="images/mariadb.png" alt="MariaDB logo" loading="lazy">
             </div>
-            <div class="proj-title" id="p4">Intégration poste de développement sur Raspberry Pi</div>
-            <div class="proj-desc">Installation d’un poste de
-                                   développement sur une carte Raspberry Pi avec le
-                                   déploiement d’une base de données MariaDB. (4 personnes - 2 mois)
-            </div>
-            <div class="tags">
-              <span class="tag">Linux</span>
-              <span class="tag">MariaDB</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Raspberry Pi</span>
+            <div class="project-body">
+              <p class="project-meta">Team of 4 · 2 months</p>
+              <h3 id="p4">Raspberry Pi development workstation</h3>
+              <p>Set up a full Linux development workstation on a Raspberry Pi board and deployed a MariaDB database on it.</p>
+              <ul class="tags"><li>Linux</li><li>Raspberry Pi</li><li>MariaDB</li><li>SQL</li></ul>
             </div>
           </article>
-
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="contact" style="margin-top:22px">
-        <h2>Contact</h2>
-        <div class="card">
-          <p>Intéressé par une collaboration, un stage ou un projet ? Contactez-moi :</p>
-          <form onsubmit="event.preventDefault(); sendContact();" aria-label="Formulaire de contact">
-            <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
-              <input id="name" required placeholder="Votre nom" />
-              <input id="email" type="email" required placeholder="Votre email" />
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-index">04</span>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <ul class="tags tags-lg"><li>Java</li><li>Python</li><li>C</li><li>C++</li><li>C#</li><li>Rust</li><li>JavaScript</li><li>TypeScript</li><li>PHP</li><li>HTML</li><li>CSS</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Databases</h3>
+            <ul class="tags tags-lg"><li>SQL</li><li>PL/SQL</li><li>CQL</li><li>Cassandra</li><li>MariaDB</li><li>MySQL</li><li>Oracle</li><li>SPARQL</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Systems &amp; tools</h3>
+            <ul class="tags tags-lg"><li>Linux</li><li>Bash</li><li>Docker</li><li>Git</li><li>GitLab</li><li>Bitbucket</li><li>Jira</li><li>AWS</li><li>Windows</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Other</h3>
+            <ul class="tags tags-lg"><li>REST APIs</li><li>Power BI</li><li>LLMs &amp; prompting</li><li>Microsoft Office</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-index">05</span>Education</h2>
+        <div class="edu-grid">
+          <article class="edu">
+            <p class="date">Sep 2025 — 2028</p>
+            <h3>Engineering degree (Diplôme d'ingénieur)</h3>
+            <p class="edu-school">Polytech Paris-Saclay, Université Paris-Saclay · Orsay, France</p>
+            <p>Major in Computer Science and Mathematical Engineering, completed as an apprenticeship with Thales.</p>
+          </article>
+          <article class="edu">
+            <p class="date">Sep 2023 — Jul 2025</p>
+            <h3>DUT in Computer Science</h3>
+            <p class="edu-school">IUT d'Orsay, Université Paris-Saclay · Gif-sur-Yvette, France</p>
+            <p>Two-year technical degree, major in Application Development: design, development and validation.</p>
+          </article>
+        </div>
+
+        <div class="extras">
+          <div class="extra">
+            <h3>Languages</h3>
+            <ul class="lang-list">
+              <li><span>French</span><span class="level">Native</span></li>
+              <li><span>English</span><span class="level">Advanced (C1)</span></li>
+              <li><span>Spanish</span><span class="level">Intermediate (B1)</span></li>
+            </ul>
+          </div>
+          <div class="extra">
+            <h3>Outside of work</h3>
+            <p>Handball · Rock climbing · Guitar · Movies</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="section-index">06</span>Contact</h2>
+        <div class="contact-card">
+          <div class="contact-intro">
+            <h3>Let's talk</h3>
+            <p>I'm looking for a 9 to 12-week internship abroad in software engineering, testing or data tooling, between 31 May and 27 August 2027. Feel free to reach out about an opportunity or just to connect.</p>
+            <ul class="contact-list">
+              <li><span class="label">Email</span><a href="mailto:thomas.neuville@universite-paris-saclay.fr">thomas.neuville@universite-paris-saclay.fr</a></li>
+              <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/thomas-neuville-12bb32295/" target="_blank" rel="noopener">thomas-neuville</a></li>
+              <li><span class="label">GitHub</span><a href="https://github.com/Jipenou/" target="_blank" rel="noopener">Jipenou</a></li>
+            </ul>
+          </div>
+
+          <form id="contactForm" class="contact-form" aria-label="Contact form" novalidate>
+            <div class="field-row">
+              <label class="field">
+                <span>Name</span>
+                <input id="name" name="name" required autocomplete="name" />
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input id="email" name="email" type="email" required autocomplete="email" />
+              </label>
             </div>
-            <textarea id="message" required placeholder="Message"></textarea>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-              <div style="font-size:13px;color:var(--muted)">ou écrivez directement à <a href="mailto:thomas.neuville@universite-paris-saclay.fr">thomas.neuville@universite-paris-saclay.fr</a></div>
-              <button class="btn primary" type="submit">Envoyer</button>
-            </div>
+            <label class="field">
+              <span>Message</span>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </label>
+            <p id="formError" class="form-error" role="alert" hidden>Please fill in all fields with a valid email address.</p>
+            <button class="btn btn-primary" type="submit">Send message</button>
           </form>
         </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div>© <span id="year"></span> Thomas Neuville — Polytech Paris-Saclay</div>
-      <div style="display:flex;gap:10px;align-items:center">
-        <a href="https://www.linkedin.com/in/thomas-neuville-12bb32295/" aria-label="LinkedIn">LinkedIn</a>
-        <a href="https://github.com/Jipenou/" aria-label="GitHub">GitHub</a>
       </div>
-    </footer>
-  </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Thomas Neuville</p>
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/in/thomas-neuville-12bb32295/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/Jipenou/" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#top">Back to top ↑</a></li>
+      </ul>
+    </div>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
